@@ -15,19 +15,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(Menu.NONE, 0, 0, "Menu1");
-        menu.add(Menu.NONE, 1, 1, "Menu2");
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-            case 0:
-                Toast.makeText(this, "Menu1 selected", Toast.LENGTH_SHORT).show();
+            case R.id.menu_refresh:
+                Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
                 break;
-            case 1:
-                Toast.makeText(this, "Menu2 selected", Toast.LENGTH_SHORT).show();
+            case R.id.menu_search:
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
